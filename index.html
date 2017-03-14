@@ -6,9 +6,57 @@
         <title>ECharts</title>
         <!-- Use echarts.js -->
         <script src="echarts.min.js"></script>
+        <script src="map.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
 
     <body>
+        <div id="main" style="width:600px;height:400px;"></div>
+        <script type="text/javascript">
+            //基於準備好的dom，初始化echarts實例
+            var myChart = echarts.init(document.getElementById('main'));
+            //指定圖表的配置項和數據
+            var option = {
+                title: {
+                    text: '犯罪被捕人數',
+                    subtext: '数据来自DATA.GOV.HK'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['2015年', '2016年']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    boundaryGap: [0, 0.01]
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['少年罪犯(十至十五歲) ', '青年罪犯(十六至二十歲)', '內地非法入境者', '旅客（內地）', '旅客（其他）']
+                },
+                series: [{
+                    name: '2015年',
+                    type: 'bar',
+                    data: [1309, 2826, 79, 1398, 2136]
+                }, {
+                    name: '2016年',
+                    type: 'bar',
+                    data: [1074, 2292, 59, 1502, 2331]
+                }]
+            };
+            //使用剛指定的配置項和數據顯示圖表
+            myChart.setOption(option);
+        </script>
     </body>
 
     </html>
