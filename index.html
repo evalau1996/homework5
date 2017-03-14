@@ -8,9 +8,25 @@
         <script src="echarts.min.js"></script>
         <script src="map.js"></script>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            a:hover {
+                text-decoration: none;
+                color: limegreen;
+            }
+            
+            .page-footer {
+                color: brown;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 16px;
+            }
+        </style>
     </head>
 
     <body>
+        <div class="page-header">
+            <h1 style="color:blueviolet;font-family: Georgia, 'Times New Roman', Times, serif">Criminology in Hong Kong</h1>
+            <h4 style="color:firebrick;font-family:Arial, Helvetica, sans-serif">by Eva Lau JOUR2106 Homework 5</h4>
+        </div>
         <div id="main1" style="width:600px;height:400px;"></div>
         <script type="text/javascript">
             //基於準備好的dom，初始化echarts實例
@@ -183,6 +199,9 @@
             //使用剛指定的配置項和數據顯示圖表
             myChart2.setOption(option);
         </script>
+        <div class="page-footer">
+            <a href="https://data.gov.hk/tc/;target=" _blank ">More Information</a>
+        </div>
     </body>
 
     </html>
